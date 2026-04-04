@@ -1,0 +1,39 @@
+# General
+node_modules/
+dist/
+build/
+.env
+*.log
+*.zip
+.DS_Store
+
+# Backend specific
+backend/.env
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Frontend specific
+frontend/.vite
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Tools
+vps-fix.js
+vps-final-fix.js
+vps-add-logs.js
+vps_direct_fix.js
+exact_hash_check.js
+check-db.js
+debug-login.js
+check-hash.js
+hash.txt
+update_users.sql
+full_update.sql
+certbot.js
+check-nginx.js
+check-nginx-local.js
+check-logs.js
+deploy.js
+setup.sh

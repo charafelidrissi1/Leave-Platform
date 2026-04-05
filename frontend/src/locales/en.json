@@ -111,7 +111,11 @@
     "year": "Year",
     "joining_date": "Joining Date",
     "seniority": "Seniority",
-    "entitlement": "Entitlement"
+    "entitlement": "Entitlement",
+    "phone": "Phone",
+    "address": "Address",
+    "department": "Department",
+    "edit_user": "Edit User"
   },
   "notifications": {
     "title": "Notifications",

@@ -111,7 +111,11 @@
     "year": "Année",
     "joining_date": "Date d'embauche",
     "seniority": "Ancienneté",
-    "entitlement": "Droit"
+    "entitlement": "Droit",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "department": "Département",
+    "edit_user": "Modifier l'utilisateur"
   },
   "notifications": {
     "title": "Notifications",

@@ -111,7 +111,11 @@
     "year": "السنة",
     "joining_date": "تاريخ الالتحاق",
     "seniority": "الأقدمية",
-    "entitlement": "الاستحقاق"
+    "entitlement": "الاستحقاق",
+    "phone": "الهاتف",
+    "address": "العنوان",
+    "department": "القسم",
+    "edit_user": "تعديل المستخدم"
   },
   "notifications": {
     "title": "الإشعارات",

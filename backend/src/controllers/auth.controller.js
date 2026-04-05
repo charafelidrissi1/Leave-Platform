@@ -5,7 +5,7 @@ const config = require('../config/env');
 
 async function register(req, res) {
   try {
-    const { name, email, password, role, joiningDate, birthDate, managerId, preferredLanguage } = req.body;
+    const { name, email, password, role, joiningDate, birthDate, managerId, preferredLanguage, phone, address, department } = req.body;
     
     if (!name || !email || !password) {
       return res.status(400).json({ error: 'Name, email, and password are required' });
@@ -18,9 +18,9 @@ async function register(req, res) {
 
     const passwordHash = await bcrypt.hash(password, 10);
     const result = await db.query(
-      `INSERT INTO users (name, email, password_hash, role, joining_date, birth_date, manager_id, preferred_language)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id, name, email, role, joining_date, preferred_language`,
-      [name, email, passwordHash, role || 'employee', joiningDate || new Date(), birthDate, managerId, preferredLanguage || 'fr']
+      `INSERT INTO users (name, email, password_hash, role, joining_date, birth_date, manager_id, preferred_language, phone, address, department)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id, name, email, role, joining_date, preferred_language`,
+      [name, email, passwordHash, role || 'employee', joiningDate || new Date(), birthDate, managerId, preferredLanguage || 'fr', phone, address, department]
     );
 
     // Create initial leave balances

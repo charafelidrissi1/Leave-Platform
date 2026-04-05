@@ -4,6 +4,7 @@ async function getAllUsers(req, res) {
   try {
     const result = await db.query(
       `SELECT u.id, u.name, u.email, u.role, u.joining_date, u.birth_date, u.manager_id, u.is_active, u.preferred_language,
+              u.phone, u.address, u.department,
               m.name as manager_name
        FROM users u
        LEFT JOIN users m ON m.id = u.manager_id
@@ -19,6 +20,7 @@ async function getUserById(req, res) {
   try {
     const result = await db.query(
       `SELECT u.id, u.name, u.email, u.role, u.joining_date, u.birth_date, u.manager_id, u.is_active, u.preferred_language,
+              u.phone, u.address, u.department,
               m.name as manager_name
        FROM users u
        LEFT JOIN users m ON m.id = u.manager_id
@@ -36,7 +38,7 @@ async function getUserById(req, res) {
 
 async function updateUser(req, res) {
   try {
-    const { name, email, role, managerId, isActive, preferredLanguage } = req.body;
+    const { name, email, role, managerId, isActive, preferredLanguage, phone, address, department } = req.body;
     const result = await db.query(
       `UPDATE users SET 
         name = COALESCE($1, name),
@@ -45,9 +47,12 @@ async function updateUser(req, res) {
         manager_id = $4,
         is_active = COALESCE($5, is_active),
         preferred_language = COALESCE($6, preferred_language),
+        phone = COALESCE($7, phone),
+        address = COALESCE($8, address),
+        department = COALESCE($9, department),
         updated_at = NOW()
-       WHERE id = $7 RETURNING id, name, email, role, joining_date, manager_id, is_active, preferred_language`,
-      [name, email, role, managerId, isActive, preferredLanguage, req.params.id]
+       WHERE id = $10 RETURNING id, name, email, role, joining_date, manager_id, is_active, preferred_language, phone, address, department`,
+      [name, email, role, managerId, isActive, preferredLanguage, phone, address, department, req.params.id]
     );
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'User not found' });

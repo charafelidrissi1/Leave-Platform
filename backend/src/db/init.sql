@@ -167,11 +167,11 @@ ON CONFLICT DO NOTHING;
 -- Password for all: "password123" (bcrypt hash)
 -- ============================================================
 INSERT INTO users (name, email, password_hash, role, joining_date, birth_date, preferred_language) VALUES
-    ('Admin User',      'admin@charafelidrissi.org',    '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'admin',    '2020-01-15', '1985-03-20', 'fr'),
-    ('Manager Ahmed',   'ahmed@charafelidrissi.org',    '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'manager',  '2018-06-01', '1980-07-15', 'fr'),
-    ('Fatima Zahra',    'fatima@charafelidrissi.org',   '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'employee', '2022-03-10', '1995-11-08', 'ar'),
-    ('Youssef El Amrani','youssef@charafelidrissi.org', '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'employee', '2023-09-01', '1998-04-25', 'en'),
-    ('Khadija Bennani', 'khadija@charafelidrissi.org',  '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'employee', '2021-01-20', '1992-12-03', 'fr')
+    ('Admin User',      'admin@giggty.com',    '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'admin',    '2020-01-15', '1985-03-20', 'fr'),
+    ('Manager Ahmed',   'ahmed@giggty.com',    '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'manager',  '2018-06-01', '1980-07-15', 'fr'),
+    ('Fatima Zahra',    'fatima@giggty.com',   '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'employee', '2022-03-10', '1995-11-08', 'ar'),
+    ('Youssef El Amrani','youssef@giggty.com', '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'employee', '2023-09-01', '1998-04-25', 'en'),
+    ('Khadija Bennani', 'khadija@giggty.com',  '$2a$10$mvr5o8QNC/.xDchtGsbwFeKG137WJ.jKvQMW3PxP5vFPGXbUe7gX6', 'employee', '2021-01-20', '1992-12-03', 'fr')
 ON CONFLICT DO NOTHING;
 
 -- Assign manager to employees

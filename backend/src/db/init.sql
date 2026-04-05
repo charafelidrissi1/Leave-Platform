@@ -51,6 +51,8 @@ CREATE TABLE IF NOT EXISTS leave_balances (
     used_days NUMERIC(5,1) NOT NULL DEFAULT 0,
     remaining NUMERIC(5,1) NOT NULL DEFAULT 0,
     carried_over NUMERIC(5,1) NOT NULL DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     UNIQUE(user_id, leave_type_id, year),
     CHECK (remaining >= 0),
     CHECK (used_days >= 0)
